@@ -1,0 +1,130 @@
+﻿<Window x:Class="Dz_6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dz_6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1200" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="2" Content="  Садовые растения&#xD;&#xA;Добавление элемента" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" Text="Выберите какому классу принадлежит растение:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel  Grid.Row="3" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="16" Grid.RowSpan="1" HorizontalAlignment="Center" Margin="10,0,0,0" Width="545" >
+
+            <RadioButton x:Name="rb_veg" Content="Овощ    " FontSize="16" IsChecked="True" VerticalAlignment="Center" />
+            <RadioButton x:Name="rb_fru" Content="Фрукт    "  FontSize="16" VerticalAlignment="Center"/>
+            <RadioButton x:Name="rb_ber" Content="Ягода    " FontSize="16" VerticalAlignment="Center"/>
+            <RadioButton x:Name="rb_rasb" Content="Малина    " FontSize="16" VerticalAlignment="Center" />
+            <RadioButton x:Name="rb_apple" Content="Яблоко    " FontSize="16" VerticalAlignment="Center"/>
+            <RadioButton x:Name="rb_potato" Content="Картошка    " FontSize="16" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" Text="Введите название:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox x:Name="tb_name" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" VerticalAlignment="Center" TextAlignment="Center" />
+
+        <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" Text="Введите время созревания (сколько месяцев):" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox x:Name="tb_time" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" VerticalAlignment="Center" TextAlignment="Center" />
+
+        <TextBlock Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" Text="Введите цвет плодов:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox x:Name="tb_color" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" VerticalAlignment="Center" TextAlignment="Center" />
+
+        <TextBlock Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" Text="Введите урожайность (целое число кг):" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox x:Name="tb_eff" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" VerticalAlignment="Center" TextAlignment="Center" />
+        <Button  Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1" Click="Button_Click_Add" Content="   Добавить   " FontSize="16" HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="17" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" Text="Вывести весь список" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <DataGrid x:Name="dgrid" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="17" Grid.ColumnSpan="11" Grid.RowSpan="4"  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=name}" Width="80" />
+                <DataGridTextColumn Header="Урожайность" Binding="{Binding Path=efficiency}" Width="100" />
+                <DataGridTextColumn Header="Цвет плодов" Binding="{Binding Path=color}" Width="100" />
+                <DataGridTextColumn Header="Время созревания" Binding="{Binding Path=ripenning_time}" Width="120" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button  Grid.Row="2" Grid.Column="28" Grid.ColumnSpan="4" Grid.RowSpan="2" Click="Button_Click_All" Content="Заполнить&#xD;&#xA;Обновить" FontSize="16" Margin="31,0,34,0"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="17" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" Text="Вывести весь список по времени созревания" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <DataGrid x:Name="dgrid2" AutoGenerateColumns="False" Grid.Row="6" Grid.Column="17" Grid.ColumnSpan="11" Grid.RowSpan="4"  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=name}" Width="80" />
+                <DataGridTextColumn Header="Урожайность" Binding="{Binding Path=efficiency}" Width="100" />
+                <DataGridTextColumn Header="Цвет плодов" Binding="{Binding Path=color}" Width="100" />
+                <DataGridTextColumn Header="Время созревания" Binding="{Binding Path=ripenning_time}" Width="120" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button  Grid.Row="7" Grid.Column="28" Grid.ColumnSpan="4" Grid.RowSpan="2" Click="Button_Click_Max" Content="Заполнить&#xD;&#xA;Обновить" FontSize="16" Margin="31,0,34,0"/>
+
+        <TextBlock Grid.Row="10" Grid.Column="17" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" Text="Вывести три самых урожайных" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <DataGrid x:Name="dgrid3" AutoGenerateColumns="False" Grid.Row="11" Grid.Column="17" Grid.ColumnSpan="11" Grid.RowSpan="3"  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=name}" Width="80" />
+                <DataGridTextColumn Header="Урожайность" Binding="{Binding Path=efficiency}" Width="100" />
+                <DataGridTextColumn Header="Цвет плодов" Binding="{Binding Path=color}" Width="100" />
+                <DataGridTextColumn Header="Время созревания" Binding="{Binding Path=ripenning_time}" Width="120" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button  Grid.Row="11" Grid.Column="28" Grid.ColumnSpan="4" Grid.RowSpan="2" Click="Button_Click_3max" Content="Заполнить&#xD;&#xA;Обновить" FontSize="16" Margin="31,0,34,0"/>
+
+        <TextBlock Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1"  FontSize="16" Text="Удаление элемента. Введите название:" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox x:Name="tb_del" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="12" Grid.RowSpan="1"  FontSize="16" VerticalAlignment="Center" TextAlignment="Center" />
+        <Button  Grid.Row="14" Grid.Column="12" Grid.ColumnSpan="4" Grid.RowSpan="1" Click="Button_Click_Del" Content="  Удалить   " FontSize="16" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>
